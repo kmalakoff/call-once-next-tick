@@ -1,8 +1,8 @@
 var nextTick = require('next-tick');
 
-module.exports = function callOnceNextTick(callback) {
+module.exports = function callOnce(callback) {
   var called = false;
-  return function (arg1, arg2, arg3, arg4, arg5, arg6) {
+  return function callOnceWrapper(arg1, arg2, arg3, arg4, arg5, arg6) {
     if (called) return;
     called = true;
 
