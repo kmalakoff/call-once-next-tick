@@ -1,4 +1,6 @@
 var assert = require('assert');
+var nextTick = require('next-tick');
+
 var callOnce = require('../..');
 
 describe('callOnce', function () {
@@ -16,13 +18,13 @@ describe('callOnce', function () {
       callback1();
       assert.ok(!args.length);
 
-      setImmediate(function () {
+      nextTick(function () {
         assert.equal(args.length, 1);
         callback1();
         assert.equal(args.length, 1);
         assert.deepEqual(args[0], []);
 
-        setImmediate(function () {
+        nextTick(function () {
           assert.equal(args.length, 1);
           done();
         }, 10);
@@ -36,13 +38,13 @@ describe('callOnce', function () {
       callback1(1);
       assert.ok(!args.length);
 
-      setImmediate(function () {
+      nextTick(function () {
         assert.equal(args.length, 1);
         callback1(101);
         assert.equal(args.length, 1);
         assert.deepEqual(args[0], [1]);
 
-        setImmediate(function () {
+        nextTick(function () {
           assert.equal(args.length, 1);
           done();
         }, 10);
@@ -56,13 +58,13 @@ describe('callOnce', function () {
       callback1(1, 2);
       assert.ok(!args.length);
 
-      setImmediate(function () {
+      nextTick(function () {
         assert.equal(args.length, 1);
         callback1(101, 102);
         assert.equal(args.length, 1);
         assert.deepEqual(args[0], [1, 2]);
 
-        setImmediate(function () {
+        nextTick(function () {
           assert.equal(args.length, 1);
           done();
         }, 10);
@@ -76,13 +78,13 @@ describe('callOnce', function () {
       callback1(1, 2, 3);
       assert.ok(!args.length);
 
-      setImmediate(function () {
+      nextTick(function () {
         assert.equal(args.length, 1);
         callback1(101, 102, 103);
         assert.equal(args.length, 1);
         assert.deepEqual(args[0], [1, 2, 3]);
 
-        setImmediate(function () {
+        nextTick(function () {
           assert.equal(args.length, 1);
           done();
         }, 10);
@@ -96,13 +98,13 @@ describe('callOnce', function () {
       callback1(1, 2, 3, 4);
       assert.ok(!args.length);
 
-      setImmediate(function () {
+      nextTick(function () {
         assert.equal(args.length, 1);
         callback1(101, 102, 103, 104);
         assert.equal(args.length, 1);
         assert.deepEqual(args[0], [1, 2, 3, 4]);
 
-        setImmediate(function () {
+        nextTick(function () {
           assert.equal(args.length, 1);
           done();
         }, 10);
@@ -116,13 +118,13 @@ describe('callOnce', function () {
       callback1(1, 2, 3, 4, 5);
       assert.ok(!args.length);
 
-      setImmediate(function () {
+      nextTick(function () {
         assert.equal(args.length, 1);
         callback1(101, 102, 103, 104, 105);
         assert.equal(args.length, 1);
         assert.deepEqual(args[0], [1, 2, 3, 4, 5]);
 
-        setImmediate(function () {
+        nextTick(function () {
           assert.equal(args.length, 1);
           done();
         }, 10);
@@ -136,13 +138,13 @@ describe('callOnce', function () {
       callback1(1, 2, 3, 4, 5, 6);
       assert.ok(!args.length);
 
-      setImmediate(function () {
+      nextTick(function () {
         assert.equal(args.length, 1);
         callback1(101, 102, 103, 104, 105, 106);
         assert.equal(args.length, 1);
         assert.deepEqual(args[0], [1, 2, 3, 4, 5, 6]);
 
-        setImmediate(function () {
+        nextTick(function () {
           assert.equal(args.length, 1);
           done();
         }, 10);
@@ -156,13 +158,13 @@ describe('callOnce', function () {
       callback1(1, 2, 3, 4, 5, 6, 7);
       assert.ok(!args.length);
 
-      setImmediate(function () {
+      nextTick(function () {
         assert.equal(args.length, 1);
         callback1(101, 102, 103, 104, 105, 106, 107);
         assert.equal(args.length, 1);
         assert.deepEqual(args[0], [1, 2, 3, 4, 5, 6, 7]);
 
-        setImmediate(function () {
+        nextTick(function () {
           assert.equal(args.length, 1);
           done();
         }, 10);
