@@ -1,6 +1,6 @@
 {
   "name": "call-once-next-tick",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Calls a callback once after platform-independent next tick",
   "main": "index.js",
   "engines": {
