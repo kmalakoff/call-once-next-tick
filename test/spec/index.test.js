@@ -1,9 +1,9 @@
 var assert = require('assert');
 var nextTick = require('next-tick');
 
-var callOnce = require('../..');
+var once = require('../..');
 
-describe('callOnce', function () {
+describe('once', function () {
   describe('does not call multiple times', function () {
     var args = [];
 
@@ -13,7 +13,7 @@ describe('callOnce', function () {
 
     it('0 arguments', function (done) {
       args = [];
-      var callback1 = callOnce(addArguments);
+      var callback1 = once(addArguments);
       assert.ok(!args.length);
       callback1();
       assert.ok(!args.length);
@@ -33,7 +33,7 @@ describe('callOnce', function () {
 
     it('1 argument', function (done) {
       args = [];
-      var callback1 = callOnce(addArguments);
+      var callback1 = once(addArguments);
       assert.ok(!args.length);
       callback1(1);
       assert.ok(!args.length);
@@ -53,7 +53,7 @@ describe('callOnce', function () {
 
     it('2 arguments', function (done) {
       args = [];
-      var callback1 = callOnce(addArguments);
+      var callback1 = once(addArguments);
       assert.ok(!args.length);
       callback1(1, 2);
       assert.ok(!args.length);
@@ -73,7 +73,7 @@ describe('callOnce', function () {
 
     it('3 arguments', function (done) {
       args = [];
-      var callback1 = callOnce(addArguments);
+      var callback1 = once(addArguments);
       assert.ok(!args.length);
       callback1(1, 2, 3);
       assert.ok(!args.length);
@@ -93,7 +93,7 @@ describe('callOnce', function () {
 
     it('4 arguments', function (done) {
       args = [];
-      var callback1 = callOnce(addArguments);
+      var callback1 = once(addArguments);
       assert.ok(!args.length);
       callback1(1, 2, 3, 4);
       assert.ok(!args.length);
@@ -113,7 +113,7 @@ describe('callOnce', function () {
 
     it('5 arguments', function (done) {
       args = [];
-      var callback1 = callOnce(addArguments);
+      var callback1 = once(addArguments);
       assert.ok(!args.length);
       callback1(1, 2, 3, 4, 5);
       assert.ok(!args.length);
@@ -133,7 +133,7 @@ describe('callOnce', function () {
 
     it('6 arguments', function (done) {
       args = [];
-      var callback1 = callOnce(addArguments);
+      var callback1 = once(addArguments);
       assert.ok(!args.length);
       callback1(1, 2, 3, 4, 5, 6);
       assert.ok(!args.length);
@@ -153,7 +153,7 @@ describe('callOnce', function () {
 
     it('7 arguments', function (done) {
       args = [];
-      var callback1 = callOnce(addArguments);
+      var callback1 = once(addArguments);
       assert.ok(!args.length);
       callback1(1, 2, 3, 4, 5, 6, 7);
       assert.ok(!args.length);
