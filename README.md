@@ -3,7 +3,7 @@
 Calls a callback once after platform-independent next tick.
 
 ```
-var next = callOnce('call-once-next-tick');
+var next = once('call-once-next-tick');
 var assert = require('assert');
 
 var results = [];
@@ -12,7 +12,7 @@ function addResults() {
   results.push(arguments);
 }
 
-var callback1 = callOnce(addResults);
+var callback1 = once(addResults);
 assert.ok(!results.length);
 callback1('error', 'value1', 'value2');
 assert.ok(!results.length);
