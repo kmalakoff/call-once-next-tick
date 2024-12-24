@@ -1,1 +1,1 @@
-ignores: ["depcheck"]
+ignores: ["call-once-next-tick", "depcheck", "ts-dev-stack", "@types/*", "@biomejs/*"]
