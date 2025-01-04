@@ -1,6 +1,6 @@
 {
   "name": "call-once-next-tick",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "description": "Calls a callback once after platform-independent next tick",
   "keywords": [
     "iterator",
