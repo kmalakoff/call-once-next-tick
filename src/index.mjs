@@ -1,13 +1,14 @@
-var nextTick = require('next-tick');
+import nextTick from 'next-tick';
 
-module.exports = function once(callback) {
-  var called = false;
+export default function once(callback) {
+  let called = false;
   return function onceWrapper(arg1, arg2, arg3, arg4, arg5, arg6) {
     if (called) return;
     called = true;
 
-    var args = arguments;
-    nextTick(function () {
+    // biome-ignore lint/style/noArguments: <explanation>
+    const args = arguments;
+    nextTick(() => {
       switch (args.length) {
         case 1:
           return callback(arg1);
@@ -26,4 +27,4 @@ module.exports = function once(callback) {
       }
     });
   };
-};
+}
