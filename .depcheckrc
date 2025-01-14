@@ -1,1 +1,1 @@
-ignores: ["call-once-next-tick", "@types/*", "@biomejs/*"]
+ignores: ["@types/*", "call-once-next-tick", "@biomejs/*"]
