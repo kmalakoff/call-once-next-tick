@@ -1,7 +1,8 @@
-const assert = require('assert');
-const nextTick = require('next-tick');
+import assert from 'assert';
+import asap from 'asap';
 
-const once = require('call-once-next-tick');
+// @ts-ignore
+import once from 'call-once-next-tick';
 
 describe('once', () => {
   describe('does not call multiple times', () => {
@@ -19,13 +20,13 @@ describe('once', () => {
       callback1();
       assert.ok(!args.length);
 
-      nextTick(() => {
+      asap(() => {
         assert.equal(args.length, 1);
         callback1();
         assert.equal(args.length, 1);
         assert.deepEqual(args[0], []);
 
-        nextTick(() => {
+        asap(() => {
           assert.equal(args.length, 1);
           done();
         }, 10);
@@ -39,13 +40,13 @@ describe('once', () => {
       callback1(1);
       assert.ok(!args.length);
 
-      nextTick(() => {
+      asap(() => {
         assert.equal(args.length, 1);
         callback1(101);
         assert.equal(args.length, 1);
         assert.deepEqual(args[0], [1]);
 
-        nextTick(() => {
+        asap(() => {
           assert.equal(args.length, 1);
           done();
         }, 10);
@@ -59,13 +60,13 @@ describe('once', () => {
       callback1(1, 2);
       assert.ok(!args.length);
 
-      nextTick(() => {
+      asap(() => {
         assert.equal(args.length, 1);
         callback1(101, 102);
         assert.equal(args.length, 1);
         assert.deepEqual(args[0], [1, 2]);
 
-        nextTick(() => {
+        asap(() => {
           assert.equal(args.length, 1);
           done();
         }, 10);
@@ -79,13 +80,13 @@ describe('once', () => {
       callback1(1, 2, 3);
       assert.ok(!args.length);
 
-      nextTick(() => {
+      asap(() => {
         assert.equal(args.length, 1);
         callback1(101, 102, 103);
         assert.equal(args.length, 1);
         assert.deepEqual(args[0], [1, 2, 3]);
 
-        nextTick(() => {
+        asap(() => {
           assert.equal(args.length, 1);
           done();
         }, 10);
@@ -99,13 +100,13 @@ describe('once', () => {
       callback1(1, 2, 3, 4);
       assert.ok(!args.length);
 
-      nextTick(() => {
+      asap(() => {
         assert.equal(args.length, 1);
         callback1(101, 102, 103, 104);
         assert.equal(args.length, 1);
         assert.deepEqual(args[0], [1, 2, 3, 4]);
 
-        nextTick(() => {
+        asap(() => {
           assert.equal(args.length, 1);
           done();
         }, 10);
@@ -119,13 +120,13 @@ describe('once', () => {
       callback1(1, 2, 3, 4, 5);
       assert.ok(!args.length);
 
-      nextTick(() => {
+      asap(() => {
         assert.equal(args.length, 1);
         callback1(101, 102, 103, 104, 105);
         assert.equal(args.length, 1);
         assert.deepEqual(args[0], [1, 2, 3, 4, 5]);
 
-        nextTick(() => {
+        asap(() => {
           assert.equal(args.length, 1);
           done();
         }, 10);
@@ -139,13 +140,13 @@ describe('once', () => {
       callback1(1, 2, 3, 4, 5, 6);
       assert.ok(!args.length);
 
-      nextTick(() => {
+      asap(() => {
         assert.equal(args.length, 1);
         callback1(101, 102, 103, 104, 105, 106);
         assert.equal(args.length, 1);
         assert.deepEqual(args[0], [1, 2, 3, 4, 5, 6]);
 
-        nextTick(() => {
+        asap(() => {
           assert.equal(args.length, 1);
           done();
         }, 10);
@@ -159,13 +160,13 @@ describe('once', () => {
       callback1(1, 2, 3, 4, 5, 6, 7);
       assert.ok(!args.length);
 
-      nextTick(() => {
+      asap(() => {
         assert.equal(args.length, 1);
         callback1(101, 102, 103, 104, 105, 106, 107);
         assert.equal(args.length, 1);
         assert.deepEqual(args[0], [1, 2, 3, 4, 5, 6, 7]);
 
-        nextTick(() => {
+        asap(() => {
           assert.equal(args.length, 1);
           done();
         }, 10);
