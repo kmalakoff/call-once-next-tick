@@ -1,4 +1,4 @@
-import nextTick from 'next-tick';
+import asap from 'asap';
 
 export default function once(callback) {
   let called = false;
@@ -8,7 +8,7 @@ export default function once(callback) {
 
     // biome-ignore lint/style/noArguments: <explanation>
     const args = arguments;
-    nextTick(() => {
+    asap(() => {
       switch (args.length) {
         case 1:
           return callback(arg1);

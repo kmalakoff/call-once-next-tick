@@ -3,11 +3,13 @@
   "version": "1.0.13",
   "description": "Calls a callback once after platform-independent next tick",
   "keywords": [
-    "iterator",
-    "asyncIterator",
-    "Symbol.asyncIterator",
-    "next",
-    "callback"
+    "call",
+    "once",
+    "callback",
+    "nextTick",
+    "setTimeout",
+    "defer",
+    "asap"
   ],
   "homepage": "https://github.com/kmalakoff/call-once-next-tick",
   "repository": {
@@ -16,7 +18,14 @@
   },
   "license": "MIT",
   "author": "Kevin Malakoff <kmalakoff@gmail.com> (https://github.com/kmalakoff)",
+  "type": "module",
+  "exports": {
+    "import": "./dist/esm/index.mjs",
+    "require": "./dist/cjs/index.cjs",
+    "types": "./dist/types/index.d.ts"
+  },
   "main": "dist/cjs/index.cjs",
+  "module": "dist/esm/index.mjs",
   "types": "dist/types/index.d.ts",
   "files": [
     "dist"
@@ -29,7 +38,7 @@
     "version": "tsds version"
   },
   "dependencies": {
-    "next-tick": "^1.1.0"
+    "asap": "^2.0.6"
   },
   "devDependencies": {
     "@types/mocha": "*",
@@ -39,9 +48,6 @@
     "node": ">=0.8"
   },
   "tsds": {
-    "source": "src/index.mjs",
-    "targets": [
-      "cjs"
-    ]
+    "source": "src/index.ts"
   }
 }
