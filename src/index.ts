@@ -1,8 +1,10 @@
 import asap from 'asap';
 
-export default function once(fn) {
+export type Function = (...args: unknown[]) => unknown;
+
+export default function once(fn: Function) {
   let called = false;
-  return function wrapper(arg1?, arg2?, arg3?, arg4?, arg5?, arg6?) {
+  return function wrapper(arg1?: unknown, arg2?: unknown, arg3?: unknown, arg4?: unknown, arg5?: unknown, arg6?: unknown, ..._args: unknown[]) {
     if (called) return;
     called = true;
 
