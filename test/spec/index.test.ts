@@ -1,5 +1,5 @@
-import assert from 'assert';
 import asap from 'asap';
+import assert from 'assert';
 
 // @ts-ignore
 import once from 'call-once-next-tick';
@@ -9,7 +9,7 @@ describe('once', () => {
     let args = [];
 
     function addArguments() {
-      // biome-ignore lint/style/noArguments: <explanation>
+      // biome-ignore lint/complexity/noArguments: Apply arguments
       args.push(Array.prototype.slice.call(arguments, 0));
     }
 
