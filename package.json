@@ -39,7 +39,7 @@
     "version": "tsds version"
   },
   "dependencies": {
-    "asap": "^2.0.6"
+    "asap": "*"
   },
   "devDependencies": {
     "@types/mocha": "*",
