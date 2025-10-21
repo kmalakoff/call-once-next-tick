@@ -1,7 +1,6 @@
 import asap from 'asap';
 import assert from 'assert';
 
-// @ts-ignore
 import once from 'call-once-next-tick';
 
 describe('once', () => {
