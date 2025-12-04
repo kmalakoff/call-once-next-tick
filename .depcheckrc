@@ -1,1 +1,1 @@
-ignores: ["node-version-use", "ts-dev-stack", "@biomejs/biome", "call-once-next-tick"]
+ignores: ["node-version-use", "ts-dev-stack", "call-once-next-tick"]
