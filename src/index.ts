@@ -1,6 +1,6 @@
-import asap from 'asap';
-
 export type Function = (...args: unknown[]) => unknown;
+
+const defer = typeof setImmediate === 'function' ? setImmediate : (fn: () => void) => setTimeout(fn, 0);
 
 export default function once(fn: Function) {
   let called = false;
@@ -8,7 +8,7 @@ export default function once(fn: Function) {
     if (called) return;
     called = true;
 
-    asap(() => {
+    defer(() => {
       // biome-ignore lint/complexity/noArguments: Apply arguments
       switch (arguments.length) {
         case 0:
