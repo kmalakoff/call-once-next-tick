@@ -4,7 +4,7 @@ import once from 'call-once-next-tick';
 
 describe('once', () => {
   describe('does not call multiple times', () => {
-    let args = [];
+    let args: unknown[][] = [];
 
     function addArguments() {
       // biome-ignore lint/complexity/noArguments: Apply arguments
