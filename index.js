@@ -8,18 +8,18 @@ module.exports = function callOnce(callback) {
 
     var args = arguments;
     nextTick(function () {
-      switch (arguments.length) {
-        case 3:
+      switch (args.length) {
+        case 1:
           return callback(arg1);
-        case 4:
+        case 2:
           return callback(arg1, arg2);
-        case 5:
+        case 3:
           return callback(arg1, arg2, arg3);
-        case 6:
+        case 4:
           return callback(arg1, arg2, arg3, arg4);
-        case 7:
+        case 5:
           return callback(arg1, arg2, arg3, arg4, arg5);
-        case 8:
+        case 6:
           return callback(arg1, arg2, arg3, arg4, arg5, arg6);
         default:
           return callback.apply(null, args);
